@@ -13,7 +13,7 @@ const Kosarica = () => {
         <div className='grid grid-cols-3 '>
           <div className='w-full'>
             <Link
-              href={'/izdelki'}
+              href='/izdelki'
               className='text-bright_red flex gap-2 w-full items-center text-sm'
             >
               <svg

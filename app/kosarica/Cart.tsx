@@ -21,7 +21,9 @@ const Cart = () => {
     }, 0);
   }, [basket.products]);
 
-  basket.products.length === 0 && router.push('/izdelki');
+  if (typeof window !== 'undefined') {
+    basket.products.length === 0 && router.push('/izdelki');
+  }
 
   return (
     <div>
