@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 
 import { useRouter } from 'next/navigation';
 import { z, ZodType } from 'zod';
@@ -56,11 +56,11 @@ const Form = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(schema) });
 
-  const submitData = async (data: IRegisterForm) => {
+  const submitData = async (data: FieldValues) => {
     const user = {
-      email: data.email,
-      password: data.password,
-      name: data.name,
+      email: data.email as string,
+      password: data.password as string,
+      name: data.name as string,
     };
     console.log(user);
 
