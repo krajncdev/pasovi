@@ -7,6 +7,8 @@ import SmallLogo from '@/public/logo-small.svg';
 import { HamburgerMenu, HeaderButtonList } from '.';
 import { navigationList } from '@/config/constants';
 
+// test
+
 const Header = () => {
   return (
     <header className='bg-dark w-full flex justify-center items-center md:py-3'>
