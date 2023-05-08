@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,200;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.container {
+  @apply px-4 py-2;
+}
+
+.blob1 {
+  border-radius: 27% 73% 40% 60% / 30% 26% 74% 70%;
+}
+.blob2 {
+  border-radius: 65% 35% 67% 33% / 30% 38% 62% 70%;
+}
+.blob3 {
+  border-radius: 46% 54% 67% 33% / 45% 60% 40% 55%;
+}
+.blob4 {
+  border-radius: 49% 51% 78% 22% / 26% 24% 76% 74%;
+}
+.blob5 {
+  border-radius: 51% 49% 32% 68% / 48% 30% 70% 52%;
+}
+.blob6 {
+  border-radius: 64% 36% 59% 41% / 22% 23% 77% 78%;
+}
+.blob7 {
+  border-radius: 64% 36% 32% 68% / 56% 23% 77% 44%;
+}
+.blob8 {
+  border-radius: 28% 72% 68% 32% / 68% 24% 76% 32%;
+}
