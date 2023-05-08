@@ -5,7 +5,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import bcrypt from 'bcrypt';
 import { connectToDatabase } from '@/lib/mongoConnection';
 
-const authOptions: NextAuthOptions = {
+const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: 'jwt',
@@ -37,7 +37,6 @@ const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
     }),
   ],
-};
+});
 
-const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
