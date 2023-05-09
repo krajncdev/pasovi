@@ -30,6 +30,7 @@ export interface IProduct {
   _id: number;
   name: string;
   price: number;
+  blurHash: string;
   colors: {
     [color: string]: IProductColor;
   };
@@ -72,6 +73,7 @@ export interface IOrder {
   orderID: any;
   buyerName: string;
   buyerEmail: string;
+  date: Date;
   products: {
     name: string;
     color: string;

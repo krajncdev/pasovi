@@ -36,7 +36,12 @@ const HeaderButtonList = () => {
             return null;
           }
           if (session.status === 'loading' && item.name === 'user') {
-            return null;
+            return (
+              <div
+                key='loading-key'
+                className='h-4 w-4 rounded-full animate-pulse bg-gray-200'
+              ></div>
+            );
           }
           if (session.status === 'authenticated' && item.name === 'user-add') {
             return null;
@@ -45,7 +50,7 @@ const HeaderButtonList = () => {
             return null;
           }
           return (
-            <li key={item.id}>
+            <li key={item.id} className='flex justify-center items-center'>
               {item.name === 'user-add' ? (
                 <Link href={'/login'}>
                   <Image src={item.src} alt={item.alt} className='h-4 w-4' />

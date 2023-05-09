@@ -67,9 +67,10 @@ const Cart = () => {
                 buyerName: name,
                 buyerEmail: email,
                 purchasedItems: basket.products,
+                date: new Date(),
               };
 
-              fetch(`${process.env.NEXT_PUBLIC_URL}/api/send_users`, {
+              fetch(`${process.env.NEXT_PUBLIC_URL}/api/completed_checkout`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

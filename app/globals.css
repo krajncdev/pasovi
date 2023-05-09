@@ -33,3 +33,8 @@
 .blob8 {
   border-radius: 28% 72% 68% 32% / 68% 24% 76% 32%;
 }
+
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
