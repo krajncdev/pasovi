@@ -19,8 +19,11 @@ const HomeLoading = () => {
           </ul>
 
           <ul className='flex-1 flex gap-3 justify-end'>
-            {Array.from({ length: 3 }, () => (
-              <li className='h-4 w-4 rounded-full animate-pulse bg-gray-200'></li>
+            {Array.from({ length: 3 }, (_, index) => (
+              <li
+                key={index}
+                className='h-4 w-4 rounded-full animate-pulse bg-gray-200'
+              ></li>
             ))}
           </ul>
         </div>
