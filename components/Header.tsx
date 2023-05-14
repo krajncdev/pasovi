@@ -7,6 +7,7 @@ import { HamburgerMenu, HeaderButtonList } from '.';
 import { navigationList } from '@/config/constants';
 import AnimationWrapper from './AnimationWrapper';
 import ImageComponent from './ImageComponent';
+import MobileBasket from './MobileBasket';
 
 const Header = () => {
   return (
@@ -27,12 +28,6 @@ const Header = () => {
               blurhash='LLH_ov.m=eR2:c9*#ZJP8wNE;bF#'
               className='h-16 w-full hidden md:block'
             />
-            {/* <Image
-              src={BigLogo}
-              alt='logo'
-              className='h-16 w-fit hidden md:block'
-              priority
-            /> */}
           </AnimationWrapper>
         </Link>
         <AnimationWrapper type='fadedown' className='flex-1'>
@@ -49,7 +44,10 @@ const Header = () => {
         <AnimationWrapper type='fadedownleft' className='flex-1'>
           <HeaderButtonList />
         </AnimationWrapper>
-        <HamburgerMenu />
+        <div className='flex gap-4'>
+          <MobileBasket />
+          <HamburgerMenu />
+        </div>
       </div>
     </header>
   );

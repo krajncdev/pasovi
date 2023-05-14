@@ -9,8 +9,8 @@ const Kosarica = () => {
   return (
     <>
       <Header />
-      <main className='container mx-auto my-12'>
-        <div className='grid grid-cols-3 '>
+      <main className='container mx-auto my-6 md:my-12'>
+        <div className='md:grid md:grid-cols-3 '>
           <div className='w-full'>
             <Link
               href='/izdelki'
@@ -28,7 +28,7 @@ const Kosarica = () => {
               <p className=' whitespace-nowrap'>Nadaljuj z nakupovanjem</p>
             </Link>
           </div>
-          <h1 className='w-full text-center text-2xl'>Košarica</h1>
+          <h1 className='w-full text-center text-2xl mt-4 md:mt-0'>Košarica</h1>
         </div>
 
         <Cart />

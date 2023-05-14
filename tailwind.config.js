@@ -21,6 +21,9 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
       },
       borderRadius: {},
+      screens: {
+        xs: '480px',
+      },
     },
   },
   plugins: [],

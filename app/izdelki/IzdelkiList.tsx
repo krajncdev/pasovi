@@ -22,7 +22,7 @@ const IzdelkiList = ({ products }: IIzdelkiListProps) => {
   );
 
   return (
-    <ul className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 my-20'>
+    <ul className='grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 my-20'>
       {visibleProducts?.map((item) => (
         <Izdelek item={item} key={item._id} />
       ))}

@@ -34,10 +34,11 @@ const HamburgerMenu = () => {
       </button>
 
       <motion.div
-        className='h-screen w-full md:hidden fixed flex flex-col bg-white justify-between right-0 top-0 max-w-[450px] p-4 z-50'
+        className='h-screen w-full md:hidden fixed flex flex-col bg-white justify-between right-0 top-0 max-w-[450px] p-4 z-[9999]'
         animate={isOpen ? 'open' : 'closed'}
         variants={hamburgerVariants}
         initial={{ x: '100%' }}
+        transition={{ bounce: 0 }}
       >
         <div className='flex justify-between'>
           <Link href='/' className='flex w-fit'>

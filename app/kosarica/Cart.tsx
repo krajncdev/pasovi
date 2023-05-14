@@ -42,7 +42,7 @@ const Cart = () => {
 
       <div className='flex w-full justify-end mt-4'>
         <PayPalButtons
-          className='w-80'
+          className='w-full sm:w-80'
           createOrder={(data, actions) => {
             return actions.order.create({
               purchase_units: basket.products.map((item, index) => {

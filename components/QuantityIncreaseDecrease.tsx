@@ -21,7 +21,7 @@ const QuantityIncreaseDecrease = ({ item }: IQuantityIncreaseDecreaseProps) => {
     <div className='flex gap-2 items-center justify-center'>
       <button onClick={() => handleDecrementButtonClick(item.id)}>
         <svg
-          className='h-4 w-4 stroke-2 fill-none stroke-dark'
+          className='h-3 w-3 md:h-4 md:w-4 stroke-2 fill-none stroke-dark'
           viewBox='0 0 24 24'
           strokeLinecap='round'
           strokeLinejoin='round'
@@ -29,10 +29,10 @@ const QuantityIncreaseDecrease = ({ item }: IQuantityIncreaseDecreaseProps) => {
           <line x1='5' x2='19' y1='12' y2='12'></line>
         </svg>
       </button>
-      <p>{item.quantity}</p>
+      <p className='text-sm md:text-base'>{item.quantity}</p>
       <button onClick={() => handleIncrementButtonClick(item.id)}>
         <svg
-          className='h-4 w-4 stroke-2 fill-none stroke-dark'
+          className='h-3 w-3 md:h-4 md:w-4 stroke-2 fill-none stroke-dark'
           viewBox='0 0 24 24'
           strokeLinecap='round'
           strokeLinejoin='round'
