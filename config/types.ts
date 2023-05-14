@@ -44,6 +44,7 @@ export interface IAllProduct {
   sold: number;
   imgSrc: string;
   quantity: number;
+  blurhash: string;
 }
 
 export interface IBasketProduct {

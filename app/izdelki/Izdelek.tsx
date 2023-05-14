@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { addBasket } from '@/store/slices/basketSlice';
 import {
@@ -8,7 +8,7 @@ import {
   IProductColor,
   TColor,
 } from '@/config/types';
-import { RootState } from '@/store';
+import ImageComponent from '@/components/ImageComponent';
 
 interface IIZdelekProps {
   item: IProduct;
@@ -17,7 +17,6 @@ interface IIZdelekProps {
 const Izdelek = ({ item }: IIZdelekProps) => {
   const [productColor, setProductColor] = useState<TColor>('black');
   const visibleColors: TColor[] = [];
-  const basket = useSelector((state: RootState) => state.basket);
 
   const bgColors = {
     red: 'bg-[#8B0000]',
@@ -37,17 +36,17 @@ const Izdelek = ({ item }: IIZdelekProps) => {
   };
 
   Object.entries(item.colors).forEach((entry) => {
-    const [key, value] = entry as [TColor, IProductColor];
+    const [key] = entry as [TColor, IProductColor];
     visibleColors.push(key);
   });
 
   return (
     <li className='flex flex-col justify-center items-center border border-gray-500 rounded-xl px-4 py-8'>
-      <img
-        loading='lazy'
+      <ImageComponent
         src={`${process.env.NEXT_PUBLIC_URL}/izdelki/${item.colors[productColor].imgSrc}.png`}
         alt={item.name}
-        className='w-full aspect-[4/5] object-center object-cover'
+        className='w-full aspect-[4/5]'
+        blurhash={item.blurHash}
       />
 
       <div className='flex justify-between w-full mt-4'>

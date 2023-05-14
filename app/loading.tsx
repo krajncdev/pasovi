@@ -1,9 +1,22 @@
+'use client';
+
 import { navigationList } from '@/config/constants';
+import { motion } from 'framer-motion';
 
 const HomeLoading = () => {
   return (
-    <>
-      <header className='h-28 w-full flex bg-dark items-center justify-center'>
+    <motion.div
+      exit={{ opacity: 0 }}
+      className='w-full h-screen bg-dark flex justify-center items-center'
+    >
+      <div
+        className='animate-spin inline-block h-12 w-12 md:w-16 md:h-16 border-[3px] md:border-[5px] border-current border-t-transparent text-bright_red rounded-full'
+        role='status'
+        aria-label='loading'
+      >
+        <span className='sr-only'>Loading...</span>
+      </div>
+      {/* <header className='h-28 w-full flex bg-dark items-center justify-center'>
         <div className='flex items-center container'>
           <div className='h-1/2  flex-1 flex justify-start gap-4 items-center'>
             <div className='h-8 w-8 rounded-full bg-gray-200 animate-pulse'></div>
@@ -36,8 +49,8 @@ const HomeLoading = () => {
         >
           <span className='sr-only'>Loading...</span>
         </div>
-      </main>
-    </>
+      </main> */}
+    </motion.div>
   );
 };
 

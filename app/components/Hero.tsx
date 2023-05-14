@@ -3,12 +3,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import AcordionBoy from '@/public/accordion-boy.png';
+import AnimationWrapper from '@/components/AnimationWrapper';
 
 const Hero = () => {
   return (
     <section className=' bg-dark md:py-12 justify-center flex'>
       <div className='container grid grid-cols-1 md:grid-cols-2 gap-x-2 lg:gap-x-0'>
-        <div className='flex justify-center order-2 md:order-1 mt-12 pb-4 md:pb-0 md:mt-0'>
+        <AnimationWrapper
+          type='faderight'
+          className='flex justify-center order-2 md:order-1 mt-12 pb-4 md:pb-0 md:mt-0'
+        >
           <div className='text-white lg:w-2/3 flex flex-col justify-center'>
             <h1 className='text-3xl sm:text-5xl lg:text-7xl font-semibold'>
               Izdelava pasov
@@ -29,15 +33,19 @@ const Hero = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </AnimationWrapper>
 
-        <div className='flex justify-center order-1 md:order-2'>
+        <AnimationWrapper
+          type='fadeleft'
+          className='flex justify-center order-1 md:order-2'
+        >
           <Image
             src={AcordionBoy}
             alt='accordion-boy'
             className='w-4/5 sm:w-2/3 lg:w-2/3'
+            priority
           />
-        </div>
+        </AnimationWrapper>
       </div>
     </section>
   );

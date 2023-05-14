@@ -4,23 +4,26 @@ import Search from './Search';
 import IzdelkiList from './IzdelkiList';
 import { connectToDatabase } from '@/lib/mongoConnection';
 import PageLayout from '@/components/PageLayout';
+import AnimationWrapper from '@/components/AnimationWrapper';
 
 const Izdelki = async () => {
   const products = await getData();
   return (
     <PageLayout>
-      <div className='container mt-12 mx-auto'>
-        <div className='flex justify-between items-center'>
-          <div className='flex gap-1'>
-            <Link href='/'>Domov</Link>
-            <p>/</p>
-            <p className='font-semibold'>Izdelki</p>
-          </div>
+      <AnimationWrapper type='fadeup'>
+        <div className='container mt-12 mx-auto'>
+          <div className='flex justify-between items-center'>
+            <div className='flex gap-1'>
+              <Link href='/'>Domov</Link>
+              <p>/</p>
+              <p className='font-semibold'>Izdelki</p>
+            </div>
 
-          <Search />
+            <Search />
+          </div>
+          <IzdelkiList products={products} />
         </div>
-        <IzdelkiList products={products} />
-      </div>
+      </AnimationWrapper>
     </PageLayout>
   );
 };

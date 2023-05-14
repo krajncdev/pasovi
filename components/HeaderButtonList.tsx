@@ -53,7 +53,12 @@ const HeaderButtonList = () => {
             <li key={item.id} className='flex justify-center items-center'>
               {item.name === 'user-add' ? (
                 <Link href={'/login'}>
-                  <Image src={item.src} alt={item.alt} className='h-4 w-4' />
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    className='h-4 w-4'
+                    priority
+                  />
                 </Link>
               ) : (
                 <button
