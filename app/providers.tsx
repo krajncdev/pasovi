@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 import { store } from '@/store';
+import { ToastContainer } from 'react-toastify';
 
 type Props = {
   children?: React.ReactNode;
@@ -20,7 +21,15 @@ export const Providers = ({ children }: Props) => {
   return (
     <PayPalScriptProvider options={initialPayPalOptions}>
       <SessionProvider>
-        <Provider store={store}>{children}</Provider>
+        <Provider store={store}>
+          <ToastContainer
+            position='top-center'
+            autoClose={4000}
+            theme='light'
+            className='md:hidden'
+          />
+          {children}
+        </Provider>
       </SessionProvider>
     </PayPalScriptProvider>
   );

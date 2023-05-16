@@ -1,6 +1,8 @@
+import { ToastContainer } from 'react-toastify';
 import { Providers } from './providers';
 
 import '@/app/globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
   title: 'Pasovi štern',

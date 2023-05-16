@@ -9,6 +9,7 @@ import {
   TColor,
 } from '@/config/types';
 import ImageComponent from '@/components/ImageComponent';
+import { toast } from 'react-toastify';
 
 interface IIZdelekProps {
   item: IProduct;
@@ -32,6 +33,24 @@ const Izdelek = ({ item }: IIZdelekProps) => {
   };
 
   const handleBasketButtonClick = (productToBasket: IBasketProduct) => {
+    toast.success('Izdelek dodan v košarico', {
+      position: 'top-center',
+      autoClose: 4000,
+      draggable: false,
+      theme: 'light',
+      progressClassName: '!bg-bright_red',
+      icon: (
+        <svg
+          className='w-10 h-10 fill-none stroke-bright_red stroke-2'
+          viewBox='0 0 24 24'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <path d='M22 11.08V12a10 10 0 1 1-5.93-9.14'></path>
+          <polyline points='22 4 12 14.01 9 11.01'></polyline>
+        </svg>
+      ),
+    });
     dispatch(addBasket(productToBasket));
   };
 
@@ -60,7 +79,7 @@ const Izdelek = ({ item }: IIZdelekProps) => {
             <button
               onClick={() => handleColorButtonClick(color)}
               className={`rounded-full h-6 w-6  ${
-                productColor === color && 'border-2 border-black'
+                productColor === color && 'border-2 border-bright_red'
               }  ${bgColors[color]}`}
             ></button>
           </li>
