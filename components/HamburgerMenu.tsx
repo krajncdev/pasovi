@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,6 +16,22 @@ const HamburgerMenu = () => {
 
   const handleOpenButtonClick = () => setIsOpen(true);
   const handleCloseButtonClick = () => setIsOpen(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    };
+
+    handleScroll();
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
 
   return (
     <>
