@@ -34,7 +34,7 @@ const HamburgerMenu = () => {
       </button>
 
       <motion.div
-        className='min-h-screen min-h-[fill-available] min-h-[-webkit-fill-available] w-full md:hidden fixed flex flex-col bg-white justify-between right-0 top-0 max-w-[450px] p-4 z-[9999]'
+        className='h-[100dvh] w-full md:hidden fixed flex flex-col bg-white justify-between right-0 top-0 max-w-[450px] p-4 z-[9999]'
         animate={isOpen ? 'open' : 'closed'}
         variants={hamburgerVariants}
         initial={{ x: '100%' }}
