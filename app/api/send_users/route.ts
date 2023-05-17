@@ -13,6 +13,7 @@ export async function POST(req: Request) {
     email,
     password: hashedPassword,
     name,
+    role: 'user',
   };
 
   const collection = db.collection('users');

@@ -24,7 +24,6 @@ export const Providers = ({ children }: Props) => {
         <Provider store={store}>
           <ToastContainer
             position='top-center'
-            autoClose={4000}
             theme='light'
             className='md:hidden'
           />

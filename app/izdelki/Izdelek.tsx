@@ -35,7 +35,7 @@ const Izdelek = ({ item }: IIZdelekProps) => {
   const handleBasketButtonClick = (productToBasket: IBasketProduct) => {
     toast.success('Izdelek dodan v košarico', {
       position: 'top-center',
-      autoClose: 4000,
+      autoClose: 2000,
       draggable: false,
       theme: 'light',
       progressClassName: '!bg-bright_red',

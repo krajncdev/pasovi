@@ -1,5 +1,4 @@
 import NextAuth from 'next-auth';
-import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 import bcrypt from 'bcrypt';
@@ -25,9 +24,19 @@ const handler = NextAuth({
       async authorize(credentials) {
         const { db } = await connectToDatabase();
         const collection = db.collection('users');
-        const user = await collection.findOne({ email: credentials?.email });
-        if (await bcrypt.compare(credentials?.password || '', user.password)) {
-          return user;
+        const { _id, ...userWithoutId } = await collection.findOne({
+          email: credentials?.email,
+        });
+        if (
+          await bcrypt.compare(
+            credentials?.password || '',
+            userWithoutId.password
+          )
+        ) {
+          return {
+            id: _id,
+            ...userWithoutId,
+          };
         }
         return null;
       },
@@ -37,6 +46,20 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.role = user.role;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.role = token.role;
+      }
+      return session;
+    },
+  },
 });
 
 export { handler as GET, handler as POST };
