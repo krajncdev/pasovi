@@ -88,3 +88,24 @@ export interface IUser {
   name: string;
   role: 'user' | 'admin';
 }
+
+export interface IUserMongo {
+  _id: string;
+  email: string;
+  password: string;
+  name: string;
+  role: string;
+}
+
+export interface IOrderMongo {
+  _id: string;
+  buyerEmail: string;
+  buyerName: string;
+  date: Date;
+  orderID: string;
+  products: {
+    color: string;
+    name: string;
+    quantity: number;
+  }[];
+}

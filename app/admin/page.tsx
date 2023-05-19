@@ -1,15 +1,35 @@
-'use client';
+import { connectToDatabase } from '@/lib/mongoConnection';
+import AdminContainer from './AdminContainer';
 
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+const AdminPage = async () => {
+  const data = await getData();
 
-const AdminPage = () => {
-  const router = useRouter();
-  const { data: session, status } = useSession();
-  if (session?.user?.role !== 'admin') {
-    router.push('/');
-  }
-  return <div>Admin page</div>;
+  return (
+    <main>
+      <AdminContainer data={data} />
+    </main>
+  );
+};
+
+const getData = async () => {
+  const { db } = await connectToDatabase();
+  const productsCollection = db.collection('products');
+  const usersCollection = db.collection('users');
+  const ordersCollection = db.collection('orders');
+
+  const productsCursor = await productsCollection.find();
+  const usersCursor = await usersCollection.find();
+  const ordersCursor = await ordersCollection.find();
+
+  const products = await productsCursor.toArray();
+  const users = await usersCursor.toArray();
+  const orders = await ordersCursor.toArray();
+
+  return {
+    products,
+    users,
+    orders,
+  };
 };
 
 export default AdminPage;
