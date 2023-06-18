@@ -1,3 +1,5 @@
+import { ColumnDef } from '@tanstack/react-table';
+
 import {
   INavigationListItem,
   ISocialMediaListItem,
@@ -92,3 +94,36 @@ export const bgColors = {
   black: 'bg-black',
   brown: 'bg-[#6A452C]',
 };
+
+const ordersColumns: ColumnDef<any>[] = [
+  { accessorKey: '_id', header: 'ID' },
+  { accessorKey: 'orderID', header: 'OrderID' },
+  { accessorKey: 'buyerEmail', header: 'Buyer email' },
+  { accessorKey: 'buyerName', header: 'Buyer name' },
+];
+
+const usersColumns: ColumnDef<any>[] = [
+  { accessorKey: '_id', header: 'ID' },
+  { accessorKey: 'email', header: 'Email' },
+  { accessorKey: 'name', header: 'Full name' },
+];
+
+const productsColumns: ColumnDef<any>[] = [
+  { accessorKey: '_id', header: 'ID' },
+  { accessorKey: 'name', header: 'Name' },
+  { accessorKey: 'colors', header: 'Colors' },
+  { accessorKey: 'price', header: 'Price' },
+  { accessorKey: 'totalSold', header: 'Total sold' },
+];
+
+export const columns = {
+  orders: ordersColumns,
+  users: usersColumns,
+  products: productsColumns,
+};
+
+export const adminButtons = [
+  { id: 1, name: 'Orders', key: 'orders' },
+  { id: 2, name: 'Products', key: 'products' },
+  { id: 3, name: 'Users', key: 'users' },
+];

@@ -1,11 +1,27 @@
 import { connectToDatabase } from '@/lib/mongoConnection';
 import AdminContainer from './AdminContainer';
+import Link from 'next/link';
 
 const AdminPage = async () => {
   const data = await getData();
 
   return (
-    <main>
+    <main className='container mx-auto mt-12'>
+      <Link
+        href='/'
+        className='text-gray-600 flex gap-2 w-full items-center text-sm'
+      >
+        <svg
+          className='h-8 w-8 stroke-gray-600 stroke-2 fill-none'
+          viewBox='0 0 24 24'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <line x1='19' x2='5' y1='12' y2='12'></line>
+          <polyline points='12 19 5 12 12 5'></polyline>
+        </svg>
+        <p className=' whitespace-nowrap text-lg'>Domov</p>
+      </Link>
       <AdminContainer data={data} />
     </main>
   );

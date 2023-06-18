@@ -11,8 +11,9 @@
       }
 
       .cls-2 {
-        font-family: Kodchasan-ExtraLight, Kodchasan;
+        font-family: Kodchasan;
         font-size: 47.18px;
+        font-weight: 200;
       }
     </style>
   </defs>

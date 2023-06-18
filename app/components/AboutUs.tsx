@@ -18,9 +18,13 @@ const AboutUs = () => {
         <div className='text-white  md:max-h-[600px] md:max-w-[500px] justify-self-beg mt-12 md:mt-0'>
           <h2 className='text-xl md:text-4xl font-bold'>O NAS</h2>
           <p className='md:text-2xl mt-4 text-base md:mt-12'>
-            Aliquam tristique in sapien ac vestibulum. Mauris vulputate at leo a
-            sollicitudin. Curabitur sollicitudin egestas lorem, in mollis leo
-            mollis id. Etiam in nisl vehicula.
+            Smo proizvajalci vrhunskih pasov za harmoniko že več kot 50 let. Vse
+            naše izdelke ročno izdelujemo v naši domači delavnici. Uporabljamo
+            najkakovostnejše materiale in združujemo tradicionalne tehnike z
+            najnovejšimi inovacijami. Naši pasovi so udobni, vzdržljivi in
+            prilagojeni posameznim glasbilom. Z veseljem vam pomagamo najti
+            popoln pas, ki bo izpolnil vaše potrebe. Zahvaljujemo se vam za
+            podporo skozi leta in veselimo se sodelovanja z vami!
           </p>
         </div>
       </div>

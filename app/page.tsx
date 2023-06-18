@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <PageLayout>
       <Hero />
-      <Image src={WaveUp} alt='wave-up' className='w-full' />
+      <Image src={WaveUp} alt='wave-up' className='w-full' priority />
       {/* @ts-expect-error Async Server Component */}
       <MostSold />
       <AboutUs />

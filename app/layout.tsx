@@ -1,5 +1,5 @@
-import { ToastContainer } from 'react-toastify';
 import { Providers } from './providers';
+import localFont from 'next/font/local';
 
 import '@/app/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,6 +35,7 @@ export const metadata = {
   publisher: 'Jaka Krajnc',
   applicationName: 'pasovi',
 };
+const poppins = localFont({ src: './assets/fonts/Poppins-Regular.ttf' });
 export default function RootLayout({
   children,
 }: {
@@ -42,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className=' font-poppins p-0 m-0 '>
+      <body className={` ${poppins.className} p-0 m-0 `}>
         <Providers>{children}</Providers>
       </body>
     </html>
